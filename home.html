@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="sass/main.css" />
   </head>
   <body>
+    <!-- navbar -->
     <header class="header">
       <nav class="header__nav">
         <h1 class="header__logo">
@@ -19,6 +20,41 @@
         </ul>
       </nav>
     </header>
+
+    <!-- hero image and input form -->
+    <div class="hero">
+      <h2 class="hero__header">Infuse your kitchen with inspiration!</h2>
+      <p class="hero__msg">
+        Turning ordinary ingredients into extraordinary dishes.
+      </p>
+      <form id="form" class="hero__form">
+        <input
+          type="text"
+          name="input"
+          id="input"
+          class="hero__input"
+          placeholder="Enter an ingredient..."
+        />
+        <button id="searchBtn" class="hero__btn btn">Search</button>
+      </form>
+    </div>
+    <main id="home-main">
+      <!-- display recipes according to search input -->
+      <section class="display">
+        <div id="displayRecipes" class="display__recipes"></div>
+      </section>
+      <!-- categories section -->
+      <section class="categories">
+        <h2 class="categories__header">Categories:</h2>
+        <div class="categories__container">
+          <div id="categoryCard" class="categories__cards"></div>
+        </div>
+      </section>
+      <!-- featured section - display random meals -->
+      <section class="featured">
+        <h2 class="featured_header">Featured:</h2>
+      </section>
+    </main>
     <footer class="footer">&copy; 2024 WFD Recipes</footer>
     <script src="script.js"></script>
   </body>
