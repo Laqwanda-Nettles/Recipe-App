@@ -1,0 +1,32 @@
+// hero image & search form/input
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.592), rgba(0, 0, 0, 0.565)),
+    url("https://images.unsplash.com/photo-1533622597524-a1215e26c0a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  height: 350px;
+  @include flex-layout($direction: column);
+  &__header {
+    text-align: center;
+    font-size: $font-xl;
+    color: $text-contrast;
+    text-shadow: 2px 2px 3px $accent-secondary;
+  }
+  &__msg {
+    text-align: center;
+    font-size: $font-md;
+    font-weight: $bold;
+    color: $text-contrast;
+  }
+  &__input {
+    border: none;
+    border-radius: 15px;
+    font-size: $font-md;
+    padding: 5px;
+  }
+  &__btn {
+    font-size: $font-sm;
+    font-weight: $bolder;
+    border: none;
+    border-radius: 15px;
+    background-color: $accent;
+  }
+}
