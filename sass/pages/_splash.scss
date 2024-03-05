@@ -1,0 +1,90 @@
+.landing {
+  display: flex;
+  background-image: url("https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  height: 88vh;
+  width: 100vw;
+  background-repeat: repeat;
+  &__image {
+    position: absolute;
+    background-color: $background-primary;
+    width: 0%;
+    height: 90%;
+    animation: display 2.5s linear 0.5s 2;
+  }
+  @keyframes display {
+    0%,
+    25% {
+      width: 100%;
+    }
+    25%,
+    50% {
+      width: 75%;
+    }
+    50%,
+    75% {
+      width: 56%;
+    }
+    75%,
+    100% {
+      width: 56%;
+    }
+  }
+  &__cta {
+    @include flex-layout($direction: column);
+    position: relative;
+    width: 55%;
+    height: 100%;
+    background-color: $background-primary;
+    padding: 15px;
+  }
+  &__cta-title {
+    font-size: $font-xl;
+    color: $navigation-primary;
+  }
+  &__cta-msg {
+    font-size: $font-md;
+    font-weight: $bold;
+  }
+  &__cta-btn {
+    font-size: $font-md;
+    background-color: $accent;
+    height: 60px;
+    width: 150px;
+  }
+  &__cta-btn a {
+    font-weight: $bolder;
+    text-decoration: none;
+    color: rgb(9, 9, 63);
+    padding: 10px;
+  }
+}
+
+//media queries
+@media (width < 342px) {
+  .landing {
+    &__cta {
+      width: 80%;
+    }
+    &__cta-title {
+      font-size: $font-md;
+    }
+    &__cta-msg {
+      font-size: $font-sm;
+    }
+    &__cta-btn {
+      font-size: $font-sm;
+      width: 125px;
+      height: 50px;
+    }
+  }
+}
+@media (width < 500px) {
+  .header {
+    &__logo {
+      font-size: $font-sm;
+    }
+    &__menu-item {
+      font-size: $font-xs;
+    }
+  }
+}
