@@ -1,4 +1,5 @@
 .footer {
+  @include flex-layout;
   background-color: $navigation-primary;
   color: $text-contrast;
   text-align: center;
