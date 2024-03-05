@@ -21,16 +21,22 @@ body {
 
 .btn {
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
 }
 .btn:hover {
-  opacity: 0.9;
+  background-color: #d68a00;
 }
 
 .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
   background-color: #005b9a;
   color: #fff;
   text-align: center;
@@ -43,7 +49,6 @@ body {
 .header {
   background-color: #005b9a;
   color: #fff;
-  padding: 10px;
   font-size: 20px;
   width: 100vw;
   height: 60px;
@@ -72,4 +77,91 @@ body {
 }
 .header__menu-item a:hover {
   color: #b3b3b3;
+}
+
+.landing {
+  display: flex;
+  background-image: url("https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  height: 88vh;
+  width: 100vw;
+  background-repeat: repeat;
+}
+.landing__image {
+  position: absolute;
+  background-color: #f7f7f7;
+  width: 0%;
+  height: 90%;
+  animation: display 2.5s linear 0.5s 2;
+}
+@keyframes display {
+  0%, 25% {
+    width: 100%;
+  }
+  25%, 50% {
+    width: 75%;
+  }
+  50%, 75% {
+    width: 56%;
+  }
+  75%, 100% {
+    width: 56%;
+  }
+}
+.landing__cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+  width: 55%;
+  height: 100%;
+  background-color: #f7f7f7;
+  padding: 15px;
+}
+.landing__cta-title {
+  font-size: 40px;
+  color: #005b9a;
+}
+.landing__cta-msg {
+  font-size: 25px;
+  font-weight: 500;
+}
+.landing__cta-btn {
+  font-size: 25px;
+  background-color: #ffa400;
+  height: 60px;
+  width: 150px;
+}
+.landing__cta-btn a {
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(9, 9, 63);
+  padding: 10px;
+}
+
+@media (width < 342px) {
+  .landing__cta {
+    width: 80%;
+  }
+  .landing__cta-title {
+    font-size: 25px;
+  }
+  .landing__cta-msg {
+    font-size: 20px;
+  }
+  .landing__cta-btn {
+    font-size: 20px;
+    width: 125px;
+    height: 50px;
+  }
+}
+@media (width < 500px) {
+  .header__logo {
+    font-size: 20px;
+  }
+  .header__menu-item {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=main.css.map */
