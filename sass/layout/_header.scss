@@ -1,6 +1,23 @@
 .header {
+  background-color: $navigation-primary;
+  color: $text-contrast;
   padding: 10px;
   font-size: $font-sm;
   width: 100vw;
   height: 60px;
+  &__nav {
+    @include flex-layout($justify: space-between);
+    padding: 10px;
+  }
+  &__menu {
+    @include flex-layout($justify: space-around);
+    list-style-type: none;
+  }
+  &__menu-item a {
+    text-decoration: none;
+    color: $text-contrast;
+  }
+  &__menu-item a:hover {
+    color: darken($text-contrast, 30%);
+  }
 }
