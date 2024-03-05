@@ -1,10 +1,10 @@
 .btn {
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   &:hover {
-    opacity: 0.9;
+    background-color: darken($accent, 8%);
   }
 }
