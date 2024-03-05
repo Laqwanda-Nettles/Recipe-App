@@ -19,4 +19,11 @@
   &__menu-item a:hover {
     color: darken($text-contrast, 30%);
   }
+  &__logo a {
+    text-decoration: none;
+    color: $text-contrast;
+  }
+  &__logo a:hover {
+    color: darken($text-contrast, 25%);
+  }
 }
