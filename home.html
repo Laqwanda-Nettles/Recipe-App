@@ -27,22 +27,44 @@
       <p class="hero__msg">
         Turning ordinary ingredients into extraordinary dishes.
       </p>
-      <form id="form" class="hero__form">
+      <form id="search-form" class="hero__form">
         <input
           type="text"
           name="input"
-          id="input"
+          id="search-input"
           class="hero__input"
-          placeholder="Enter an ingredient..."
+          aria-placeholder="Enter an ingredient..."
         />
-        <button id="searchBtn" class="hero__btn btn">Search</button>
+        <button id="search-btn" class="hero__btn btn">Search</button>
       </form>
     </div>
     <main id="home-main">
-      <!-- display recipes according to search input -->
+      <!-- display recipes cards according to search input -->
       <section class="display">
-        <div id="displayRecipes" class="display__recipes"></div>
+        <div id="recipe-cards" class="display__recipes"></div>
       </section>
+
+      <!-- Modal to display recipe details -->
+      <div id="myModal" class="modal">
+        <div class="modal__content">
+          <span class="modal__close">&times;</span>
+          <h2 class="modal__name"></h2>
+          <p>
+            <strong>Category:</strong
+            ><span id="modal-category" class="modal__category"></span>
+          </p>
+          <p>
+            <strong>Area:</strong
+            ><span id="modal-area" class="modal__area"></span>
+          </p>
+          <img src="" alt="Recipe Image" id="modal-img" class="modal__img" />
+          <h3>Ingredints</h3>
+          <ul id="modal-ingredients" class="modal__ingredients"></ul>
+          <h3>Instructions</h3>
+          <p id="modal-instructions" class="modal__instructions"></p>
+        </div>
+      </div>
+
       <!-- categories section -->
       <section class="categories">
         <h2 class="categories__header">Categories:</h2>
