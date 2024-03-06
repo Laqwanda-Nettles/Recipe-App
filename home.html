@@ -22,7 +22,7 @@
     </header>
 
     <!-- hero image and input form -->
-    <div class="hero">
+    <div class="hero mb-3">
       <h2 class="hero__header">Infuse your kitchen with inspiration!</h2>
       <p class="hero__msg">
         Turning ordinary ingredients into extraordinary dishes.
@@ -34,10 +34,12 @@
           id="search-input"
           class="hero__input"
           aria-placeholder="Enter an ingredient..."
+          placeholder="Enter an ingredient..."
         />
         <button id="search-btn" class="hero__btn btn">Search</button>
       </form>
     </div>
+
     <main id="home-main">
       <!-- display recipes cards according to search input -->
       <section class="display">
@@ -48,17 +50,17 @@
       <div id="myModal" class="modal">
         <div class="modal__content">
           <span class="modal__close">&times;</span>
-          <h2 class="modal__name"></h2>
+          <h2 id="modal-name" class="modal__name"></h2>
           <p>
-            <strong>Category:</strong
+            <strong>Category: </strong
             ><span id="modal-category" class="modal__category"></span>
           </p>
           <p>
-            <strong>Area:</strong
+            <strong>Area: </strong
             ><span id="modal-area" class="modal__area"></span>
           </p>
           <img src="" alt="Recipe Image" id="modal-img" class="modal__img" />
-          <h3>Ingredints</h3>
+          <h3>Ingredients</h3>
           <ul id="modal-ingredients" class="modal__ingredients"></ul>
           <h3>Instructions</h3>
           <p id="modal-instructions" class="modal__instructions"></p>
@@ -67,14 +69,106 @@
 
       <!-- categories section -->
       <section class="categories">
-        <h2 class="categories__header">Categories:</h2>
-        <div class="categories__container">
-          <div id="categoryCard" class="categories__cards"></div>
+        <h2 class="categories__header m-2">Categories:</h2>
+        <div class="categories__container m-3">
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/beef.png"
+              alt="Steak"
+            />
+            <h3 class="categories__card-title">Beef</h3>
+          </div>
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/chicken.png"
+              alt="chicken leg quarters"
+            />
+            <h3 class="categories__card-title">Chicken</h3>
+          </div>
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/pork.png"
+              alt="pork chop"
+            />
+            <h3 class="categories__card-title">Pork</h3>
+          </div>
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/seafood.png"
+              alt="plate of sushi with a salad"
+            />
+            <h3 class="categories__card-title">Seafood</h3>
+          </div>
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/starter.png"
+              alt="Caprese salad"
+            />
+            <h3 class="categories__card-title">Starter</h3>
+          </div>
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/breakfast.png"
+              alt="plate of pancakes, bacon , & eggs"
+            />
+            <h3 class="categories__card-title">Breakfast</h3>
+          </div>
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/side.png"
+              alt="four side dishes"
+            />
+            <h3 class="categories__card-title">Sides</h3>
+          </div>
+          <div class="categories__card card">
+            <img
+              class="categories__card-img"
+              src="https://www.themealdb.com/images/category/dessert.png"
+              alt="brownie topped with ice cream & chocolate sauce"
+            />
+            <h3 class="categories__card-title">Dessert</h3>
+          </div>
         </div>
       </section>
       <!-- featured section - display random meals -->
       <section class="featured">
-        <h2 class="featured_header">Featured:</h2>
+        <h2 class="featured__header m-2">Featured:</h2>
+        <div class="featured__cards-container p-3">
+          <div class="featured__card card">
+            <img
+              src="https://www.themealdb.com/images/media/meals/qtuuys1511387068.jpg"
+              alt="peanut butter cheesecake"
+              class="featured__card-img"
+            />
+            <h3 class="featured__card-title">Peanut Butter Cheesecake</h3>
+            <div class="featured__card-btn btn">Get Recipe</div>
+          </div>
+          <div class="featured__card card">
+            <img
+              src="https://www.themealdb.com/images/media/meals/1525872624.jpg"
+              alt="kung pao chicken"
+              class="featured__card-img"
+            />
+            <h3 class="featured__card-title">Kung Pao Chicken</h3>
+            <div class="featured__card-btn btn">Get Recipe</div>
+          </div>
+          <div class="featured__card card">
+            <img
+              src="https://www.themealdb.com/images/media/meals/sxysrt1468240488.jpg"
+              alt="Kapsalon"
+              class="featured__card-img"
+            />
+            <h3 class="featured__card-title">Kapsalon</h3>
+            <div class="featured__card-btn btn">Get Recipe</div>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="footer">&copy; 2024 WFD Recipes</footer>
