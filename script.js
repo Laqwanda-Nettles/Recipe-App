@@ -126,3 +126,53 @@ function outsideModalClick(event) {
     modal.style.display = "none";
   }
 }
+
+// Featured Section:
+//function to fetch random recipe data
+async function getRandomRecipe() {
+  try {
+    const response = await fetch(`${baseUrl}/random.php`);
+    const data = await response.json();
+    return data.meals[0];
+  } catch (error) {
+    console.error("Error fetching random recipe:", error);
+  }
+}
+
+//function to display random recipe card in featured section
+async function displayRandomRecipe() {
+  const featuredSection = document.querySelector(".featured__cards-container");
+  featuredSection.innerHTML = ""; //clear existing cards
+
+  try {
+    // for loop to generate and display additional cards
+    for (let i = 0; i < 3; i++) {
+      const randomRecipeData = await getRandomRecipe();
+      if (randomRecipeData) {
+        const recipe = new Recipe(randomRecipeData);
+        const card = createRecipeCard(recipe);
+        featuredSection.appendChild(card);
+      }
+    }
+  } catch (error) {
+    console.error("Error displaying random recipes:", error);
+  }
+}
+
+// function to create a recipe card
+function createRecipeCard(recipe) {
+  const card = document.createElement("div");
+  card.classList.add("featured__card", "card");
+  card.innerHTML = `
+  <img src="${recipe.image}" alt="${recipe.name}" class="featured__card-img"/>
+  <h3 class="featured__card-title">${recipe.name}</h3>
+  <button class="featured__card-btn btn" data-id="${recipe.id}">Get Recipe</button>
+  `;
+  card
+    .querySelector(".featured__card-btn")
+    .addEventListener("click", displayRecipeDetails);
+  return card;
+}
+
+//call/invoke function to display cards when page loads
+displayRandomRecipe();
