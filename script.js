@@ -50,15 +50,20 @@ window.addEventListener("click", outsideModalClick);
 
 // function to fetch data based off search value
 async function searchRecipes(event) {
-  event.preventDefault(); // prevent refreshing when entering a search input
-  const keyword = searchInput.value.trim();
-  if (keyword === "") {
-    return;
+  try {
+    event.preventDefault(); // prevent refreshing when entering a search input
+    const keyword = searchInput.value.trim();
+    if (keyword === "") {
+      return;
+    }
+    const response = await fetch(`${baseUrl}/search.php?s=${keyword}`);
+    const data = await response.json();
+    displayRecipes(data.meals);
+  } catch (error) {
+    console.error("Error searching recipes:", error);
   }
-  const response = await fetch(`${baseUrl}/search.php?s=${keyword}`);
-  const data = await response.json();
-  displayRecipes(data.meals);
 }
+
 // function to display recipe + create card
 function displayRecipes(recipes) {
   recipeCardsContainer.innerHTML = "";
@@ -85,25 +90,30 @@ function displayRecipes(recipes) {
     button.addEventListener("click", displayRecipeDetails);
   });
 }
+
 // function to display recipe details when 'Get Recipe' btn is clicked
 async function displayRecipeDetails(event) {
-  const recipeId = event.target.dataset.id;
-  const response = await fetch(`${baseUrl}/lookup.php?i=${recipeId}`);
-  const data = await response.json();
-  console.log("Recipe Data:", data.meals[0]);
-  const recipe = new Recipe(data.meals[0]);
+  try {
+    const recipeId = event.target.dataset.id;
+    const response = await fetch(`${baseUrl}/lookup.php?i=${recipeId}`);
+    const data = await response.json();
+    console.log("Recipe Data:", data.meals[0]);
+    const recipe = new Recipe(data.meals[0]);
 
-  modalName.textContent = recipe.name;
-  modalCategory.textContent = recipe.category;
-  modalArea.textContent = recipe.area;
-  modalImg.src = recipe.image;
-  console.log("Ingredients:", recipe.ingredients);
-  modalIngredients.innerHTML = `<ul>${recipe.ingredients
-    .map((ingredient) => `<li>${ingredient}</li>`)
-    .join("")}</ul>`;
-  modalInstructions.textContent = recipe.instructions;
+    modalName.textContent = recipe.name;
+    modalCategory.textContent = recipe.category;
+    modalArea.textContent = recipe.area;
+    modalImg.src = recipe.image;
+    console.log("Ingredients:", recipe.ingredients);
+    modalIngredients.innerHTML = `<ul>${recipe.ingredients
+      .map((ingredient) => `<li>${ingredient}</li>`)
+      .join("")}</ul>`;
+    modalInstructions.textContent = recipe.instructions;
 
-  modal.style.display = "block";
+    modal.style.display = "block";
+  } catch (error) {
+    console.error("Error displaying recipe details:", error);
+  }
 }
 
 // functions to close modal - when span (x) is clicked
