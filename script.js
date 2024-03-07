@@ -77,7 +77,7 @@ function displayRecipes(recipes) {
     const recipe = new Recipe(recipeData);
 
     const card = document.createElement("div");
-    card.classList.add("display__recipe-card");
+    card.classList.add("display__recipe-card", "card");
     card.innerHTML = `
     <img class="display__recipe-img" src="${recipe.image}" alt="${recipe.name}"/>
     <h3>${recipe.name}</h3>
@@ -105,7 +105,7 @@ async function displayRecipeDetails(event) {
     modalArea.textContent = recipe.area;
     modalImg.src = recipe.image;
     console.log("Ingredients:", recipe.ingredients);
-    modalIngredients.innerHTML = `<ul>${recipe.ingredients
+    modalIngredients.innerHTML = `<ul class="modal__ingredients">${recipe.ingredients
       .map((ingredient) => `<li>${ingredient}</li>`)
       .join("")}</ul>`;
     modalInstructions.textContent = recipe.instructions;
