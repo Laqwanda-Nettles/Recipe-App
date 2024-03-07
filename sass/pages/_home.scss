@@ -39,16 +39,28 @@
 // recipe cards display
 .display {
   &__recipe-card {
+    background-color: $background-secondary;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
     width: 200px;
     float: left;
+    @include flex-layout($direction: column);
   }
   &__recipe-img {
     width: 100%;
     border-radius: 5px;
+  }
+  &__recipe-btn {
+    background-color: $accent;
+    font-size: $font-xs;
+    font-weight: $bold;
+  }
+  &__not-found {
+    font-size: $font-md;
+    font-weight: $bolder;
+    color: darken(orangered, 8%);
   }
 }
 
@@ -64,24 +76,55 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
   &__content {
-    background-color: #fefefe;
+    @include flex-layout($direction: column, $align: flex-start);
+    gap: 10px;
+    background-color: darken($background-secondary, 5);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     border-radius: 10px;
   }
+  &__header {
+    width: 100%;
+    @include flex-layout($justify: space-between);
+  }
   &__close {
-    color: #aaa;
-    float: right;
+    color: $accent;
     font-size: 28px;
-    font-weight: $bold;
+    font-weight: $bolder;
   }
   &__close:hover,
   &__close:focus {
-    color: black;
+    color: darken($accent, 10);
     text-decoration: none;
     cursor: pointer;
+  }
+  &__name {
+    color: darken($accent-secondary, 15);
+    font-size: $font-lg;
+  }
+  &__category,
+  &__area,
+  strong {
+    font-size: $font-sm;
+  }
+  &__ingredients {
+    list-style-type: none;
+  }
+  &__ingredients,
+  &__instructions {
+    font-size: $font-xs;
+  }
+  h3 {
+    font-size: $font-md;
+    color: darken($accent-secondary, 15);
+  }
+  &__img {
+    border-radius: 10px;
+    width: 100%;
+    max-height: 600px;
+    object-fit: contain;
   }
 }
 
