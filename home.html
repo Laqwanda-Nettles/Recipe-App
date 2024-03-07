@@ -33,8 +33,8 @@
           name="input"
           id="search-input"
           class="hero__input"
-          aria-placeholder="Enter an ingredient..."
-          placeholder="Enter an ingredient..."
+          aria-placeholder="Search recipes..."
+          placeholder="Search recipes..."
         />
         <button id="search-btn" class="hero__btn btn">Search</button>
       </form>
@@ -49,8 +49,11 @@
       <!-- Modal to display recipe details -->
       <div id="myModal" class="modal">
         <div class="modal__content">
-          <span class="modal__close">&times;</span>
-          <h2 id="modal-name" class="modal__name"></h2>
+          <div class="modal__header">
+            <h2 id="modal-name" class="modal__name"></h2>
+            <span class="modal__close">&times;</span>
+          </div>
+
           <p>
             <strong>Category: </strong
             ><span id="modal-category" class="modal__category"></span>
