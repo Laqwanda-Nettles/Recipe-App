@@ -1,0 +1,81 @@
+//hero
+.about-hero {
+  font-size: $font-xxl;
+}
+
+//about section
+.about {
+  @include flex-layout($direction: column);
+  &__header {
+    font-size: $font-xl;
+    color: darken($accent-secondary, 10);
+  }
+  &__msg {
+    font-size: $font-sm;
+    font-weight: $bold;
+    text-align: justify;
+  }
+}
+
+//future features header
+.future {
+  position: relative;
+  &__background-img {
+    background-image: url("https://images.unsplash.com/photo-1706267701238-b4d69fc8f640?q=80&w=1900&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    height: 250px;
+    background-position: center;
+  }
+  &__header {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.485);
+    font-size: $font-xl;
+    color: $text-contrast;
+    text-shadow: 2px 2px 2px darken($accent-secondary, 10);
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+//new features
+.new-features {
+  @include flex-layout($direction: column);
+  &__title {
+    font-size: $font-lg;
+    color: darken($accent-secondary, 10);
+  }
+  &__subtitle {
+    font-size: $font-md;
+    color: darken($accent-secondary, 10);
+  }
+  &__msg,
+  &__subtitle-msg {
+    font-size: $font-sm;
+    font-weight: $bold;
+    text-align: justify;
+  }
+}
+
+//media query
+@media (width < 808px) {
+  .future {
+    &__header {
+      font-size: $font-lg;
+    }
+  }
+}
+@media (width < 630px) {
+  .future {
+    &__header {
+      font-size: $font-md;
+      bottom: 8%;
+    }
+  }
+}
