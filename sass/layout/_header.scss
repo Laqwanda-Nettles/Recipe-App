@@ -26,4 +26,72 @@
   &__logo a:hover {
     color: darken($text-contrast, 25%);
   }
+  /* Dropdown menu */
+  &__dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $background-primary;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    top: 60px;
+    right: 0;
+  }
+  &__dropdown-content a {
+    font-weight: $bolder;
+    color: darken($navigation-primary, 10%);
+    text-decoration: none;
+    display: block;
+  }
+  &__dropdown-content a:hover {
+    background-color: $accent;
+    color: darken($navigation-primary, 30%);
+  }
+  .show {
+    display: block;
+  }
+  // menu icon bars
+  &__drop-container {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: $text-contrast;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  transform: translateY(11px) rotate(-45deg);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: translateY(-11px) rotate(45deg);
+}
+
+//media queries
+@media (min-width: 700px) {
+  .header__menu {
+    display: flex;
+  }
+  .header__drop-container {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .header__menu {
+    display: none;
+  }
+  .header__drop-container {
+    display: inline-block;
+  }
 }
