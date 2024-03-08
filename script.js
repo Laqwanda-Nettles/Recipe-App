@@ -176,3 +176,30 @@ function createRecipeCard(recipe) {
 
 //call/invoke function to display cards when page loads
 displayRandomRecipe();
+
+//Hamburger Menu
+function toggleDropdown() {
+  const dropdown = document.getElementById("myDropdown");
+  const icon = document.querySelector(".header__drop-container");
+
+  dropdown.classList.toggle("show");
+  icon.classList.toggle("change");
+}
+
+//close drop menu when click outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".header__dropbtn")) {
+    const dropdowns = document.getElementsByClassName(
+      "header__dropdown-content"
+    );
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+        document
+          .querySelector(".header__drop-container")
+          .classList.remove("change");
+      }
+    }
+  }
+};
