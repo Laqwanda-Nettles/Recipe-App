@@ -18,6 +18,20 @@
           <li class="header__menu-item"><a href="#">Home</a></li>
           <li class="header__menu-item"><a href="about.html">About</a></li>
         </ul>
+        <!-- Menu for smaller screens -->
+        <div
+          class="header__drop-container header__dropbtn"
+          onclick="toggleDropdown()"
+        >
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <!-- Dropdown menu -->
+        <div id="myDropdown" class="header__dropdown-content">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+        </div>
       </nav>
     </header>
 
