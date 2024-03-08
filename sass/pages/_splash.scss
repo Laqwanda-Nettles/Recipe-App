@@ -78,13 +78,13 @@
     }
   }
 }
-@media (width < 500px) {
-  .header {
-    &__logo {
-      font-size: $font-sm;
-    }
-    &__menu-item {
-      font-size: $font-xs;
-    }
-  }
-}
+// @media (width < 500px) {
+//   .header {
+//     &__logo {
+//       font-size: $font-sm;
+//     }
+//     &__menu-item {
+//       font-size: $font-xs;
+//     }
+//   }
+// }
