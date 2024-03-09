@@ -60,31 +60,35 @@
 }
 
 //media queries
-@media (width < 342px) {
+@media (max-width: 500px) {
   .landing {
+    &__image {
+      visibility: hidden;
+    }
     &__cta {
-      width: 80%;
+      width: 100%;
+      animation: show 3s linear 0s 1;
     }
-    &__cta-title {
-      font-size: $font-md;
+  }
+  @keyframes show {
+    0%,
+    25% {
+      opacity: 0%;
     }
-    &__cta-msg {
-      font-size: $font-sm;
+    25%,
+    50% {
+      opacity: 25%;
     }
-    &__cta-btn {
-      font-size: $font-sm;
-      width: 125px;
-      height: 50px;
+    50%,
+    75% {
+      opacity: 50%;
+    }
+    75%,
+    100% {
+      opacity: 75%;
+    }
+    100% {
+      opacity: 100%;
     }
   }
 }
-// @media (width < 500px) {
-//   .header {
-//     &__logo {
-//       font-size: $font-sm;
-//     }
-//     &__menu-item {
-//       font-size: $font-xs;
-//     }
-//   }
-// }
