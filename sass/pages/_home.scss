@@ -169,3 +169,26 @@
     font-weight: $bolder;
   }
 }
+
+//media queries
+@media (max-width: 500px) {
+  .hero {
+    &__header {
+      font-size: $font-md;
+    }
+    &__msg {
+      font-size: $font-sm;
+    }
+    &__input {
+      font-size: $font-xs;
+    }
+    &__btn {
+      font-size: $font-xs;
+    }
+  }
+}
+@media (max-width: 315px) {
+  #search-form {
+    @include flex-layout($direction: column);
+  }
+}
