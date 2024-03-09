@@ -257,6 +257,34 @@ body {
     display: inline-block;
   }
 }
+@media (max-width: 400px) {
+  .header__logo {
+    font-size: 20px;
+  }
+}
+@media (max-width: 300px) {
+  .header__logo {
+    font-size: 18px;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 25px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .change .bar1 {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar3 {
+    transform: translateY(-10px) rotate(45deg);
+  }
+}
 .landing {
   display: flex;
   background-image: url("https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -319,20 +347,30 @@ body {
   padding: 10px;
 }
 
-@media (width < 342px) {
+@media (max-width: 500px) {
+  .landing__image {
+    visibility: hidden;
+  }
   .landing__cta {
-    width: 80%;
+    width: 100%;
+    animation: show 3s linear 0s 1;
   }
-  .landing__cta-title {
-    font-size: 25px;
-  }
-  .landing__cta-msg {
-    font-size: 20px;
-  }
-  .landing__cta-btn {
-    font-size: 20px;
-    width: 125px;
-    height: 50px;
+  @keyframes show {
+    0%, 25% {
+      opacity: 0%;
+    }
+    25%, 50% {
+      opacity: 25%;
+    }
+    50%, 75% {
+      opacity: 50%;
+    }
+    75%, 100% {
+      opacity: 75%;
+    }
+    100% {
+      opacity: 100%;
+    }
   }
 }
 #home-main {
@@ -537,6 +575,30 @@ body {
   font-weight: 600;
 }
 
+@media (max-width: 500px) {
+  .hero__header {
+    font-size: 25px;
+  }
+  .hero__msg {
+    font-size: 20px;
+  }
+  .hero__input {
+    font-size: 18px;
+  }
+  .hero__btn {
+    font-size: 18px;
+  }
+}
+@media (max-width: 315px) {
+  #search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
 .about-hero {
   font-size: 50px;
 }
